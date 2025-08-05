@@ -25,7 +25,7 @@ function AppContent() {
           <Route path="/student" element={user?.role === 'STUDENT' ? <StudentDashboard /> : <Navigate to="/login" />} />
           <Route path="/course/:id" element={user ? <CourseDetails /> : <Navigate to="/login" />} />
           <Route path="/quiz/:courseId" element={user?.role === 'STUDENT' ? <Quiz /> : <Navigate to="/login" />} />
-          <Route path="/" element={user ? <Navigate to={user.role === 'TEACHER' ? '/teacher' : '/student'} /> : <Login />} />
+          <Route path="/api/auth" element={user ? <Navigate to={user.role === 'TEACHER' ? '/teacher' : '/student'} /> : <Login />} />
         </Routes>
       </main>
     </div>
