@@ -23,7 +23,7 @@ function Register() {
     try {
       const success = await register(formData.name, formData.email, formData.password, formData.role);
       if (success) {
-        navigate('/');
+        navigate('/login');
       } else {
         setError('Email already exists');
       }
